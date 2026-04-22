@@ -35,4 +35,14 @@ def get_data(team_id):
     print(result)
 
 def refill_water(team_id, amount):
-    result = post_request()
+    result = post_request("/reactor/refill-water", {"team_id": team_id, "amount": amount})
+    print("\nОтвет сервера:")
+    print(result)
+
+def activate_cooling(team_id, amount):
+    result = post_request("/reactor/activate-cooling", {"team_id": team_id, "amount": amount})
+    print("\nОтвет сервера:")
+    print(result)
+
+def emergency_shutdown(team_id):
+    result = post_request("/reactor/reset_reactor", {"team_id": team_id})
