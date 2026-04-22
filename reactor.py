@@ -45,4 +45,24 @@ def activate_cooling(team_id, amount):
     print(result)
 
 def emergency_shutdown(team_id):
+    result = post_request("/reactor/emergency-shutdown", {"team_id": team_id})
+    print("\nОтвет сервера:")
+    print(result)
+
+def reset_reactor(team_id):
     result = post_request("/reactor/reset_reactor", {"team_id": team_id})
+    print("\nОтвет сервера:")
+    print(result)
+
+def show_menu():
+    print("\n МЕНЮ")
+    print("1 - Зарегистрировать команду")
+    print("2 - Создать реактор")
+    print("3 - Получить данные реактора")
+    print("4 - Посмотреть историю")
+    print("5 - Долить воду")
+    print("6 - Включить охлаждение")
+    print("7 - Аварийная остановка")
+    print("8 - Сбросить реактор")
+    print("0 - Выход")
+
